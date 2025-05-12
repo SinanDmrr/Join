@@ -37,12 +37,15 @@
         </div>
         <div id="deadline">
           <div class="border-style" routerLink="/board">
-            <div
-              id="prioContainer"
-              [ngStyle]="{ 'background-color': deadlineBgColor }"
-            >
-              <img [src]="deadlineImgSrc" alt="Priority Icon" />
-            </div>
+            @if (deadlineImgSrc != "") {
+              <div
+                id="prioContainer"
+                [ngStyle]="{ 'background-color': deadlineBgColor }"
+              >
+                <img [src]="deadlineImgSrc" alt="Priority Icon" />
+              </div>
+            }
+
             <div>
               <div class="amount-description">
                 <p>{{ urgentTaskCount }}</p>
